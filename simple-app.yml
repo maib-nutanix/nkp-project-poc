@@ -6,7 +6,7 @@ metadata:
   name: nkp-project-app
   namespace: project-00002
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: nkp-project-app
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: web
-        image: maib/dockerized-app:v0.1
+        image: maib/dockerized-app:v0.2
         ports:
         - containerPort: 5000
 ---
