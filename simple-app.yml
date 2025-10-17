@@ -16,7 +16,7 @@ spec:
         app: nkp-project-app
     spec:
       containers:
-      - name: nginx
+      - name: web
         image: maib/dockerized-app:v0.1
         ports:
         - containerPort: 80
