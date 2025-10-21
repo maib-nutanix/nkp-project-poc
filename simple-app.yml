@@ -1,4 +1,4 @@
-# simple-app.yaml
+# simple-app.yaml used for proj 02
 
 apiVersion: apps/v1
 kind: Deployment
