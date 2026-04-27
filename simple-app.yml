@@ -27,11 +27,29 @@ metadata:
   name: nkp-project-app-service
   namespace: project-00001
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: nkp-project-app
   ports:
     - protocol: TCP
       port: 80
       targetPort: 5000
-      nodePort: 31000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  generation: 1
+  name: simple-python-app-ingress
+  namespace: project-00001
+spec:
+  rules:
+  - host: my-simple-python-app.local
+    http:
+      paths:
+      - backend:
+          service:
+            name: nkp-project-app-service
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
