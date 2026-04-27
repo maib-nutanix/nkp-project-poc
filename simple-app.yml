@@ -39,7 +39,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   generation: 1
-  name: simple-python-app-ingress
+  name: nkp-project-app-ingress
   namespace: project-00001
 spec:
   rules:
